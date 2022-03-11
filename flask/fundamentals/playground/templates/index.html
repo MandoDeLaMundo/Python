@@ -1,0 +1,23 @@
+
+<link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'styles.css')}}">
+
+<h3>Welcome!</h3>
+
+<div class="main">
+    {% for i in range (0, times): %}
+    <div id="box" style="background-color: {{color}};">{{''}}</div>
+    {% endfor %}
+</div>
+
+
+
+
+
+
+<!-- <div id="box" style="height: 100px;width: 100px;background-color: lightblue;border: 3px solid black; margin-right: 10px;"></div> -->
+<!-- <div id="box" style="height: 100px;width: 100px;background-color: lightblue;border: 3px solid black; margin-right: 10px;"></div> -->
+
+<!-- {% if phrase == "hello" %}
+  <p>The phrase says hello</p>
+{% endif %} -->
+
