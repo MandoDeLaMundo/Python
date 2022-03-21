@@ -1,0 +1,10 @@
+<h1>All Users</h1>
+{% for one_user in all_users %}
+    <p>ID: {{one_user.id}}</p>
+    <p>Name: {{one_user.first_name}} {{one_user.last_name}}</p>
+    <p>Email: {{one_user.email}}</p>
+    <hr>
+{% endfor %}
+<a href="/users/new">Add a New User</a>
+
+
