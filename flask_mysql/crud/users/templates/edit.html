@@ -7,23 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Add a New User</h1>
-    <form action="/create_user" method="POST">
+    <h1>Edit a User</h1>
+    <form action="/users/update" method="POST">
+        <input type="hidden" name="id" value="{{user.id}}">
         <label for="fname">First Name: </label>
         <br>
-        <input type="text" name="fname">
+        <input type="text" name="fname" placeholder="{{user.first_name}}">
         <br>
         <label for="lname">Last Name: </label>
         <br>
-        <input type="text" name="lname">
+        <input type="text" name="lname" placeholder="{{user.last_name}}">
         <br>
         <label for="email">Email: </label>
         <br>
-        <input type="text" name="email">
+        <input type="text" name="email" placeholder="{{user.email}}">
         <br>
-        <input type="submit" value="Create">
+        <input type="submit" value="Update">
     </form>
-    <a href="/users">Home</a>
-
+    <a href="/users/{{user.id}}">Show | </a><a href="/users">Home</a>
+    </form>
 </body>
 </html>

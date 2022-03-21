@@ -1,10 +1,22 @@
-<h1>All Users</h1>
-{% for one_user in all_users %}
-    <p>ID: {{one_user.id}}</p>
-    <p>Name: {{one_user.first_name}} {{one_user.last_name}}</p>
-    <p>Email: {{one_user.email}}</p>
-    <hr>
-{% endfor %}
-<a href="/users/new">Add a New User</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Users</h1>
+    {% for one_user in all_users %}
+        <p>ID: {{one_user.id}}</p>
+        <p>Name: {{one_user.first_name}} {{one_user.last_name}}</p>
+        <p>Email: {{one_user.email}}</p>
+        <a href="/users/{{one_user.id}}">Show | </a><a href="/users/edit/{{one_user.id}}">Edit | </a><a href="/users/{{one_user.id}}/delete">Delete</a>
+        <hr>
+    {% endfor %}
+    <a href="/users/new">Add a New User</a>
+</body>
+</html>
 
 

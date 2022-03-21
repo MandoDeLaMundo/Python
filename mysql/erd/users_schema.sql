@@ -29,3 +29,9 @@ ORDER BY first_name;
 SELECT *
 FROM users
 ORDER BY first_name DESC;
+
+SELECT id, first_name, last_name, email, DATE_FORMAT(created_at, "%M/%e/%Y"), DATE_FORMAT(updated_at, "%M/%e/%Y"), TIME_FORMAT(updated_at, "%h:%i %p")
+FROM users
+WHERE id = 4;
+
+UPDATE user SET first_name = "Sam", last_name = "Nulland", email = "SN8987@gmail.com", updated_at = NOW() WHERE id = 4;
