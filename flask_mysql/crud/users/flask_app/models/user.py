@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 
 class User:
     def __init__(self,data):
@@ -41,4 +41,3 @@ class User:
         query = "INSERT INTO users (first_name, last_name, email, created_at, updated_at) VALUES (%(fname)s, %(lname)s, %(email)s, NOW(), NOW());"
         return connectToMySQL('users_schema').query_db(query,data)
 
-        # id, first_name, last_name, email, DATE_FORMAT(created_at, "%M/%e/%Y"), DATE_FORMAT(updated_at, "%M/%e/%Y"), TIME_FORMAT(updated_at, "%h:%i %p")
