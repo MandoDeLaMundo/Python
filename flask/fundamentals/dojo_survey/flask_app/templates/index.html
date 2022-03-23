@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit" method="post">
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <label for="name">Your name: </label>
+        <input type="text" name = 'name'>
+    
+        <br>
+        <label for="dojo">Dojo location: </label>
+        <select name = 'location'>
+            <option value="">--Select A Location--</option>
+            <option value="San Jose">San Jose</option>
+            <option value="Sacramento">Sacramento</option>
+        </select>
+    
+        <br>
+        <label for="language">Favorite language: </label>
+        <select name = 'language'>
+            <option value="">--Select A Language--</option>
+            <option value="HTML">HTML</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="CSS">CSS</option>
+        </select>
+    
+        <br>
+        <label for="comment">Comment (Optional): </label>
+    
+        <br>
+        <textarea name="comment" id="" cols="30" rows="10"></textarea>
+    
+        <br>
+        <input type="submit" value="Button">
+    </form>
+</body>
+</html>
