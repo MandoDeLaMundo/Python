@@ -34,4 +34,4 @@ SELECT id, first_name, last_name, email, DATE_FORMAT(created_at, "%M/%e/%Y"), DA
 FROM users
 WHERE id = 4;
 
-UPDATE user SET first_name = "Sam", last_name = "Nulland", email = "SN8987@gmail.com", updated_at = NOW() WHERE id = 4;
+UPDATE users SET first_name = "Sam", last_name = "Nulland", email = "SN8987@gmail.com", updated_at = NOW() WHERE id = 4;
