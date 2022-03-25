@@ -38,11 +38,32 @@ class Email:
 
 
     @staticmethod
-    def validate_user( user ):
+    def validate_register(data):
         is_valid = True
-        if not EMAIL_REGEX.match(user['email']): 
-            flash("Invalid email address!")
+        if len(data['first_name']) < 2:
+            flash("First Name must be at least 2 characters.", "register")
             is_valid = False
-        if EMAIL_REGEX.match(user['email']): 
-            flash("The email address you entered is a VALID email address! Thank you!")
+        if len(data['last_name']) < 2:
+            flash("Last Name must be at least 2 characters.", "register")
+            is_valid = False
+        if len(data['email']) < 1:
+            flash("Must create an email.", "register")
+            is_valid = False
+        if len(data['password']) < 8:
+            flash("Must create a password.", "register")
+            is_valid = False
+        if len(data['password_confirm']) != data['password']:
+            flash("Passwords must match.", "register")
+            is_valid = False
+        return is_valid
+
+
+    @staticmethod
+    def validate_login( data ):
+        is_valid = True
+        if not EMAIL_REGEX.match(data['email']): 
+            flash("Invalid email address!", "login")
+            is_valid = False
+        if EMAIL_REGEX.match(data['email']): 
+            flash("The email address you entered is a VALID email address! Thank you!", "login")
         return is_valid
